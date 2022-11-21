@@ -19,7 +19,7 @@ let btnDiv = document.querySelector('#btnDiv');
 let btnMul = document.querySelector('#btnMul');
 let btnSub = document.querySelector('#btnSub');
 let btnAdd = document.querySelector('#btnAdd');
-let btnEquals = document.querySelector('#btnEquals');
+let btnEquals = document.querySelector('#btnEqual');
 // Add event listener
 btnSeven.addEventListener('click', ()=> {
     results.value += btnSeven.textContent;
