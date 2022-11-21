@@ -1,5 +1,6 @@
 // Result
 let results = document.querySelector('#results');
+let firstOp = 0;
 // Selected Operator
 let operator = "";
 // Numbers (Buttons)
@@ -74,15 +75,18 @@ btnMul.addEventListener('click', ()=> {
 btnSub.addEventListener('click', ()=> {
     selectedOperator('-');
 }) 
-btnAdd.addEventListener('click', ()=> {
-    results.value = "";
+btnAdd.addEventListener('click', (e)=> {
+    e.preventDefault();
     selectedOperator('+');
+    results.value = "";
 }) 
-btnEquals.addEventListener('click', ()=> {
+btnEquals.addEventListener('click', (e)=> {
+    e.preventDefault();
     let secondOperator = results.value;
     switch(operator) {
         case '+':
-            results.value = eval(`${firstOperand()}${operator}${secondOperator}`);
+            console.log(firstOp);
+            results.value = eval(`${firstOp}${operator}${secondOperator}`);
         break;
         default:
             alert("Used of incorrect operator");
@@ -92,10 +96,12 @@ btnEquals.addEventListener('click', ()=> {
 
 // Return the first operand values
 function firstOperand() {
-    return results.value;
+    firstOp = results.value
+    return firstOp;
 }
 // Return an operator
 function selectedOperator(op) {
+    firstOperand();
     operator = op;
     return operator;
 }
