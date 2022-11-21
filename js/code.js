@@ -21,7 +21,14 @@ let btnMul = document.querySelector('#btnMul');
 let btnSub = document.querySelector('#btnSub');
 let btnAdd = document.querySelector('#btnAdd');
 let btnEquals = document.querySelector('#btnEqual');
+// Clear button
+let bntClear = document.querySelector('#btnClearEntry');
 // Add event listener
+// Clear
+bntClear.addEventListener('click', ()=> {
+    results.value = "";
+})
+// Seven
 btnSeven.addEventListener('click', ()=> {
     results.value += btnSeven.textContent;
 })
@@ -68,12 +75,15 @@ btnDecimal.addEventListener('click', ()=> {
 // Operators
 btnDiv.addEventListener('click', ()=> {
     selectedOperator('/');
+    results.value = "";
 }) 
 btnMul.addEventListener('click', ()=> {
-    selectedOperator('*');    
+    selectedOperator('*');  
+    results.value = "";  
 }) 
 btnSub.addEventListener('click', ()=> {
     selectedOperator('-');
+    results.value = "";
 }) 
 btnAdd.addEventListener('click', (e)=> {
     e.preventDefault();
@@ -83,17 +93,14 @@ btnAdd.addEventListener('click', (e)=> {
 btnEquals.addEventListener('click', (e)=> {
     e.preventDefault();
     let secondOperator = results.value;
-    switch(operator) {
-        case '+':
-            console.log(firstOp);
-            results.value = eval(`${firstOp}${operator}${secondOperator}`);
-        break;
-        default:
-            alert("Used of incorrect operator");
-        break;
+    if((firstOp.length != 0) &&
+    (secondOperator.length != 0)){
+
+        results.value = eval(`${firstOp}${operator}${secondOperator}`);
+    }else {
+        alert("Please provide your operands");
     }
 }) 
-
 // Return the first operand values
 function firstOperand() {
     firstOp = results.value
