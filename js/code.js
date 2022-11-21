@@ -15,11 +15,11 @@ let btnThree = document.querySelector('#btnThree');
 let btnZero = document.querySelector('#btnZero');
 let btnDecimal = document.querySelector('#btnDecimal');
 // Operators
-let btnDiv = document.querySelector('#btnSeven');
-let btnMul = document.querySelector('#btnEight');
-let btnSub = document.querySelector('#btnNine');
-let btnAdd = document.querySelector('#btnFour');
-let btnEquals = document.querySelector('#btnFive');
+let btnDiv = document.querySelector('#btnDiv');
+let btnMul = document.querySelector('#btnMul');
+let btnSub = document.querySelector('#btnSub');
+let btnAdd = document.querySelector('#btnAdd');
+let btnEquals = document.querySelector('#btnEquals');
 // Add event listener
 btnSeven.addEventListener('click', ()=> {
     results.value += btnSeven.textContent;
