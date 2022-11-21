@@ -66,6 +66,9 @@ button {
     width: 2.5rem;
 }
 @media (width < 900px) {
+    .container {
+        width: 100%;
+    }
     .numbers >* {
         width: 100%;
     }
