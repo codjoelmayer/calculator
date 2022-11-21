@@ -76,7 +76,7 @@ btnSub.addEventListener('click', ()=> {
 }) 
 btnAdd.addEventListener('click', ()=> {
     results.value = "";
-    console.log(selectedOperator('+'));
+    selectedOperator('+');
 }) 
 btnEquals.addEventListener('click', ()=> {
     let secondOperator = results.value;
