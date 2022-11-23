@@ -70,7 +70,9 @@ btnZero.addEventListener('click', ()=> {
 })
 //Decimal point
 btnDecimal.addEventListener('click', ()=> {
-    results.value += btnDecimal.textContent;
+    if(!results.value.includes('.')) {
+        results.value += btnDecimal.textContent;
+    }
 })
 // Operators
 btnDiv.addEventListener('click', ()=> {
